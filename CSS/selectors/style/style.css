@@ -1,0 +1,123 @@
+/* ----------------------------
+   Basic Reset and Base Styles
+----------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Element Selector – applies to all body elements */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 20px;
+  }
+  
+  /* ID Selector – more specific than element/class selectors */
+  #main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Class Selector – used for form styling */
+  .form-section {
+    margin-bottom: 30px;
+  }
+  
+  .form-section h2 {
+    margin-bottom: 15px;
+  }
+  
+  /* Descendant Selector – styles input inside form-section */
+  .form-section input,
+  .form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Attribute Selector – styles button using type attribute */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Pseudo-class Selector – adds hover effect */
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #eaeaea;
+  }
+  
+  /* Navigation Styling */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  nav a:hover,
+  nav a:focus {
+    text-decoration: underline;
+  }
+  
+  /* Footer Styling */
+  footer {
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* ----------------------------
+     Specificity Example
+     Inline style (1,0,0,0) > ID (0,1,0,0) > Class (0,0,1,0) > Element (0,0,0,1)
+  ----------------------------- */
+  
+  /* This class will apply unless overridden by a more specific selector */
+  .label-highlight {
+    color: green;
+  }
+  
+  /* More specific – ID overrides class */
+  #label-important {
+    color: red;
+  }
+  

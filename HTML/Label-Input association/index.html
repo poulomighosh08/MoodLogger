@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Logger</title>
+</head>
+<body>
+
+  <nav>
+    <h2>Mood Logger App</h2>
+  </nav>
+
+  <section>
+    <article>
+      <h3>Log Your Mood</h3>
+      <form action="/submit-mood" method="post">
+        <div>
+          <label for="username">Your Name:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div>
+          <label for="mood">How are you feeling today?</label>
+          <input type="text" id="mood" name="mood" required>
+        </div>
+
+        <div>
+          <label for="notes">Additional Notes:</label>
+          <textarea id="notes" name="notes" rows="4" cols="30"></textarea>
+        </div>
+
+        <div>
+          <button type="submit">Log Mood</button>
+        </div>
+      </form>
+    </article>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mood Logger App</p>
+  </footer>
+
+</body>
+</html>
