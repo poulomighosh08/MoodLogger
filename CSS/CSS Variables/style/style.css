@@ -1,0 +1,194 @@
+/* ========== CSS VARIABLES ========== */
+/* Defining reusable design tokens */
+:root {
+  --primary-color: #4CAF50;
+  --primary-hover: #45a049;
+  --background-color: #f0f8ff;
+  --card-bg: #fff;
+  --border-color: #ccc;
+  --table-header-bg: #e0f0ff;
+  --spacing-small: 5px;
+  --spacing-medium: 10px;
+  --spacing-large: 20px;
+  --box-shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow-strong: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  padding: var(--spacing-large);
+}
+
+/* Heading style */
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: var(--spacing-large);
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  max-width: 400px;
+  margin: 0 auto var(--spacing-large) auto;
+  padding: var(--spacing-large);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: scale(1.02);
+}
+
+/* Label styles */
+label {
+  font-weight: bold;
+  margin-bottom: var(--spacing-small);
+}
+
+/* Input and select styling */
+input[type="text"],
+select {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-medium);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: var(--spacing-small);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ========== TABLE STYLING (Updated from second snippet) ========== */
+/* Replacing old table style with a cleaner, more readable look */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Removes gaps between cells */
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc; /* Defines cell borders */
+  padding: 10px; /* Padding inside each cell */
+  text-align: left; /* Aligns text to left */
+}
+
+table th {
+  background-color: #eaeaea; /* Light background for headers */
+}
+
+/* Row hover effect for better readability */
+table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* ========== FLEXBOX SECTION ========== */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-large);
+  padding: var(--spacing-medium);
+  border: 1px dashed #aaa;
+}
+
+.mood-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 15px var(--spacing-large);
+  margin: var(--spacing-small);
+  box-shadow: var(--box-shadow-light);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-strong);
+}
+
+.mood-card h3 {
+  margin-bottom: var(--spacing-small);
+  font-size: 18px;
+  color: #444;
+}
+
+.mood-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  .flex-container {
+    justify-content: flex-start;
+  }
+
+  .mood-card {
+    width: 45%;
+  }
+
+  form {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: var(--spacing-medium);
+  }
+
+  .mood-card {
+    width: 100%;
+    margin: 0;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: var(--spacing-small);
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}

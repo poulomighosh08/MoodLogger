@@ -1,0 +1,188 @@
+/* ----------------------------
+   CSS Variables for consistency
+----------------------------- */
+:root {
+  --primary-color: #4CAF50;
+  --primary-hover: #45a049;
+  --background-color: #f0f8ff;
+  --card-bg: #fff;
+  --border-color: #ccc;
+  --table-header-bg: #e0f0ff;
+  --spacing-small: 5px;
+  --spacing-medium: 10px;
+  --spacing-large: 20px;
+  --box-shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow-strong: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base body style */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: #333;
+  padding: var(--spacing-large);
+}
+
+/* Main container */
+#main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  padding: var(--spacing-large);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+}
+
+/* Form sections */
+/* Form container layout fix */
+form {
+  display: flex;
+  flex-wrap: wrap; /* Wrap items if screen is small */
+  gap: var(--spacing-medium); /* Space between elements */
+  align-items: center; /* Align vertically in the same row */
+}
+
+/* Make inputs and textarea consistent in height */
+form input[type="text"],
+form textarea {
+  flex: 1; /* Take available space */
+  min-width: 200px;
+}
+
+/* Keep button aligned and not stretched */
+form button {
+  flex-shrink: 0; /* Prevent button from stretching */
+  align-self: flex-start; /* Align button to top of row */
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.form-section h2 {
+  margin-bottom: 15px;
+}
+
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: var(--spacing-medium);
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* Buttons */
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-medium);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------
+   Table Styling (Updated from new snippet)
+--------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove gaps between cells */
+  margin-top: 20px; /* Space above table */
+}
+
+table th,
+table td {
+  border: 1px solid #ccc; /* Border for cells */
+  padding: 10px; /* Padding inside cells */
+  text-align: left; /* Align text to left */
+}
+
+table th {
+  background-color: #eaeaea; /* Light gray header background */
+}
+
+table tr:hover {
+  background-color: #f5f5f5; /* Highlight row on hover */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin-bottom: var(--spacing-large);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Specificity example */
+.label-highlight {
+  color: green;
+}
+
+#label-important {
+  color: red;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #main-content {
+    padding: var(--spacing-medium);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: var(--spacing-medium);
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: var(--spacing-small);
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
